@@ -35,9 +35,9 @@ module.exports = {
 
         create table characters(
             char_id serial primary key,
-            races integer references races(race_id),
-            classes integer references classes(class_id),
-            name integer references names(names_id)
+            classes varchar,
+            races varchar,
+            name varchar 
         );
 
         insert into classes(class_name)
@@ -94,17 +94,52 @@ module.exports = {
 
     getCharacters: (req, res) => {
         sequelize.query(`
-        SELECT * FROM characters`)
+        SELECT * FROM characters;
+        `)
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log(err))
     },
 
-    createCharacter: (req, res) => {
-        sequelize.query(`
-            insert into characters (RAND(race_id), RAND(class_id), RAND(names_id))
-            returning*;
+    createCharacter: async (req, res) => {
+        let charObj = {name: undefined, race: undefined, class: undefined}
+        let randomName = Math.floor(1 + Math.random() * (20));
+        let randomRace = Math.floor(1 + Math.random() * 9);
+        let randomClass = Math.floor(1 + Math.random() * 12);
+
+        await sequelize.query(`
+            SELECT * FROM names
+            WHERE names_id = ${randomName}
+        `).then(dbRes => {
+            charObj.name = dbRes[0][0].char_names
+            // console.log(dbRes[0][0].char_names)
+            res.status(200)}).catch(err => console.log(err))
+
+            console.log(charObj)
+
+        await sequelize.query(`
+            SELECT * FROM races
+            WHERE race_id = ${randomRace}
+        `).then(dbRes => {
+            charObj.race = dbRes[0][0].race_name
+            res.status(200)}).catch(err => console.log(err))
+            console.log(charObj)
+
+        await sequelize.query(`
+            SELECT * FROM classes
+            WHERE class_id = ${randomClass}
+        `).then(dbRes => {
+            charObj.class = dbRes[0][0].class_name
+            res.status(200)}).catch(err => console.log(err))
+            console.log(charObj)
+
+        await sequelize.query(`
+        insert into characters(classes, races, name)
+        values ('${charObj.class}', '${charObj.race}', '${charObj.name}')
+        returning *
         `)
-        .then(dbRes => res.status(200).send(dbRes[0]))
+        .then(dbRes => {
+            console.log(dbRes)
+            res.status(200).send(dbRes[0][0])})
         .catch(err => console.log(err))
     }
 }
