@@ -90,5 +90,21 @@ module.exports = {
             console.log('DB Seeded!')
             res.sendStatus(200)
         }).catch(err => console.log('Error seeding DB', err))
+    },
+
+    getCharacters: (req, res) => {
+        sequelize.query(`
+        SELECT * FROM characters`)
+        .then(dbRes => res.status(200).send(dbRes[0]))
+        .catch(err => console.log(err))
+    },
+
+    createCharacter: (req, res) => {
+        sequelize.query(`
+            insert into characters (RAND(race_id), RAND(class_id), RAND(names_id))
+            returning*;
+        `)
+        .then(dbRes => res.status(200).send(dbRes[0]))
+        .catch(err => console.log(err))
     }
 }
