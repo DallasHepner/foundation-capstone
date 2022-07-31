@@ -16,6 +16,8 @@ const counter10 = document.getElementById("d10Display")
 const counter8 = document.getElementById("d8Display")
 const counter6 = document.getElementById("d6Display")
 const counter4 = document.getElementById("d4Display")
+const statsDis = document.getElementById("statDisplay1")
+
 
 function createCharacter() {
     axios.get("http://localhost:4000/create-characters/")
@@ -24,21 +26,29 @@ function createCharacter() {
 }
 
 function statGenerator() {
+    let diceSum = [];
+
     for(let i = 0; i < 6; i++) {
-    let d1 = Math.floor(Math.random() * 6) + 1;
-    let d2 = Math.floor(Math.random() * 6) + 1;
-    let d3 = Math.floor(Math.random() * 6) + 1;
-    let d4 = Math.floor(Math.random() * 6) + 1;
-    if ((d4<=d3)&(d4<=d2)&(d4<=d1)) { 
-        console.log(d1 + d2 + d3)
-    }else if ((d3<=d4)&(d3<=d2)&(d3<=d1)) { 
-        console.log(d1 + d2 + d4)
-    }else if ((d2<=d4)&(d2<=d3)&(d2<=d1)) {
-        console.log(d1 + d3 + d4) 
-    }else{ 
-        console.log(d2 + d3 + d4) 
+        let d1 = Math.floor(Math.random() * 6) + 1;
+        let d2 = Math.floor(Math.random() * 6) + 1;
+        let d3 = Math.floor(Math.random() * 6) + 1;
+        let d4 = Math.floor(Math.random() * 6) + 1;
+        if ((d4<=d3)&(d4<=d2)&(d4<=d1)) {
+            let sum = (" " + (d1+d2+d3))
+            diceSum.push(sum)
+        }else if ((d3<=d4)&(d3<=d2)&(d3<=d1)) { 
+            let sum = (" " + (d1 + d2 + d4))
+            diceSum.push(sum)
+        }else if ((d2<=d4)&(d2<=d3)&(d2<=d1)) {
+            let sum = (" " + (d1 + d3 + d4))
+            diceSum.push(sum)
+        }else{
+            let sum = (" " + (d2 + d3 + d4))
+            diceSum.push(sum)
+        }
     }
-  }
+  console.log(diceSum);
+  statsDis.textContent = diceSum
 }
 
 function rollD20() {

@@ -32,6 +32,7 @@ section{
 .container2{
     flex-direction:column;
     justify-content:space-evenly;
+    border: 5px solid #930C10;
     top: 10%;
     left: 10%;
     margin: 5px;
@@ -43,10 +44,11 @@ section{
 .container3{
     flex-direction:column;
     justify-content:space-evenly;
+    border: 5px solid #930C10;
     top: 10%;
     right: 10%;
     margin: 5px;
-    width: 10vw;
+    width: 50vw;
     height: 10vh;
     padding: 10px;
     background-color: #F7Ce65;
@@ -78,6 +80,7 @@ section{
 .container5{
     flex-direction:column;
     justify-content:space-evenly;
+    border: 5px solid #930C10;
     bottom: 5%;
     right: 5%;
     margin: 5px;
