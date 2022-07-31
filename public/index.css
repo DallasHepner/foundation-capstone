@@ -8,7 +8,15 @@ body{
 h1{
     position: absolute;
     text-align: center;
-    color: purple;
+    color: #930C10;
+}
+section{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: space-evenly; 
 }
 .container {
     flex-direction:column;
@@ -46,13 +54,26 @@ h1{
 .container4{
     flex-direction:column;
     justify-content:space-evenly;
+    border:5px solid #930C10;
     top: 45%;
     right: 5%;
     margin: 5px;
-    width: 10vw;
+    width: 90vw;
     height: 10vh;
     padding: 10px;
     background-color: #F7Ce65;
+}
+.container4-1{
+    top: 45%;
+    right: 5%;
+    width: 90vw;
+    height: 10vh;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	align-content: flex-start;
 }
 .container5{
     flex-direction:column;
@@ -71,12 +92,10 @@ h1{
     color: #FFFEBD;
     background-color: #290000;
     padding: 2px, 6px;
-    text-align:center;
-    font-size: 42px;;
-    width: 2vw;
-    height: 2vh;
+    top: 2vw;
+    left: 2vh;
 }
-button2{
+.button2{
     position: center;
     color: #FFFEBD;
     background-color: #290000;
@@ -84,15 +103,14 @@ button2{
     top: 2vw;
     left: 2vh;
 }
-button3{
-    position: center;
+.button3{
     color: #FFFEBD;
     background-color: #290000;
     padding: 2px, 6px;
-    top: 2vw;
-    left: 2vh;
+    top: 10vw;
+    left: 10vh;
 }
-button4{
+.button4{
     position: center;
     color: #FFFEBD;
     background-color: #290000;
