@@ -23,8 +23,8 @@ rollbar.log('Hello world!')
 // DEV
 app.post('/seed', seed)
 // CHARACTERS
-app.get('/characters', getCharacters)
-app.post('/characters', createCharacter)
+app.post('/create-characters', getCharacters)
+app.get('/characters', createCharacter)
 
 // GET EACH FILE
 app.get('/', (req, res) => {

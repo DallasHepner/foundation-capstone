@@ -20,13 +20,13 @@ const saveBtn = document.getElementById("saveBtn")
 
 
 function createCharacter() {
-    axios.get("http://localhost:4000/create-characters/")
-    .then(() => console.log(res.data))
+    axios.post("http://localhost:4044/create-characters/")
+    .then((res) => console.log(res.data))
     .catch(error => console.log(error))
 }
 function recentCharacters () {
-    axios.post("http://localhost:4000/characters/")
-    .then(() => console.log(res.data))
+    axios.get("http://localhost:4044/characters/")
+    .then((res) => console.log(res.data))
     .catch(error => console.log(error))
 }
 function saveMe () {
@@ -100,7 +100,7 @@ function rollD4() {
     counter4.textContent = d1
 }
 
-alertBtn.addEventListener('click', createCharacter)
+alertBtn.addEventListener('click', recentCharacters)
 statBtn.addEventListener('click', statGenerator)
 diceBtn.addEventListener('click', rollD20)
 diceBtn2.addEventListener('click', rollPercent)
@@ -109,5 +109,5 @@ diceBtn4.addEventListener('click', rollD10)
 diceBtn5.addEventListener('click', rollD8)
 diceBtn6.addEventListener('click', rollD6)
 diceBtn7.addEventListener('click', rollD4)
-recentChar.addEventListener('click', recentCharacters)
+recentChar.addEventListener('click', createCharacter)
 saveBtn.addEventListener('click', saveMe)
