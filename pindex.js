@@ -1,5 +1,3 @@
-console.log('Hello world')
-
 const alertBtn = document.getElementById("charbtn")
 const statBtn = document.getElementById("charbtn2")
 const diceBtn = document.getElementById("charbtn3")
@@ -18,6 +16,7 @@ const counter6 = document.getElementById("d6Display")
 const counter4 = document.getElementById("d4Display")
 const statsDis = document.getElementById("statDisplay1")
 const recentChar = document.getElementById("charbtn4")
+const saveBtn = document.getElementById("saveBtn")
 
 
 function createCharacter() {
@@ -29,6 +28,14 @@ function recentCharacters () {
     axios.post("http://localhost:4000/characters/")
     .then(() => console.log(res.data))
     .catch(error => console.log(error))
+}
+function saveMe () {
+    html2canvas(document.body).then((canvas) => {
+        let a = document.createElement("a");
+        a.download = "dnd-character.png";
+        a.href = canvas.toDataURL("image/png");
+        a.click();
+    })
 }
 
 function statGenerator() {
@@ -102,3 +109,5 @@ diceBtn4.addEventListener('click', rollD10)
 diceBtn5.addEventListener('click', rollD8)
 diceBtn6.addEventListener('click', rollD6)
 diceBtn7.addEventListener('click', rollD4)
+recentChar.addEventListener('click', recentCharacters)
+saveBtn.addEventListener('click', saveMe)
