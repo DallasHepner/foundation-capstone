@@ -28,31 +28,31 @@ app.get('/characters', getCharacters)
 app.post('/characters', createCharacter)
 
 // GET EACH FILE
-app.get('/', (req, res) => {
-    rollbar.log("Someone loaded up your html!")
-    res.sendFile(path.join(__dirname, '../public/index.html'))
+app.get('/public', (req, res) => {
+    // rollbar.log("Someone loaded up your html!")
+    res.sendFile(path.join(__dirname, '../index.html'))
 })
-app.get('/css', (req, res) => {
-    rollbar.log("Someone loaded your css")
-    res.sendFile(path.join(__dirname, '../public/index.css'))
-    try{
-        pictureLink()
-    }catch(warning){
-        rollbar.warning("Link unavailable")
-    }
+app.get('/public/css', (req, res) => {
+    // rollbar.log("Someone loaded your css")
+    res.sendFile(path.join(__dirname, '../index.css'))
+    // try{
+    //     pictureLink()
+    // }catch(warning){
+    //     rollbar.warning("Link unavailable")
+    // }
 })
-app.get('/js', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/pindex.js'))
-    try{ 
-        nonExistentFunction();
-    }catch(error){
-        rollbar.error(error)
-    }
-    try{
-        buttonAlert()
-    }catch(critical){
-        rollbar.critical("No sound plays")
-    }
+app.get('/public/js', (req, res) => {
+    res.sendFile(path.join(__dirname, '../pindex.js'))
+    // try{ 
+    //     nonExistentFunction();
+    // }catch(error){
+    //     rollbar.error(error)
+    // }
+    // try{
+    //     buttonAlert()
+    // }catch(critical){
+    //     rollbar.critical("No sound plays")
+    // }
 })
 
 app.listen(SERVER_PORT, () => console.log(`up on ${SERVER_PORT}`))
