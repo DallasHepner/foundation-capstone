@@ -3,7 +3,6 @@ const express = require('express')
 const path = require('path')
 const cors = require('cors')
 const app = express()
-const port = process.env.PORT || 4044
 const {seed, getCharacters, createCharacter} = require('./seed.js')
 
 app.use(express.json())
@@ -54,5 +53,7 @@ app.get('/js', (req, res) => {
     //     rollbar.critical("No sound plays")
     // }
 })
+
+const port = process.env.PORT || 4044
 
 app.listen(port, () => console.log(`up on ${port}`))
