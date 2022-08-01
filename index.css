@@ -10,6 +10,12 @@ h1{
     text-align: center;
     color: #930C10;
 }
+h2{
+    position: absolute;
+    text-align: center;
+    color: #930C10;
+    font-size: 2vw;
+}
 section{
     display: flex;
 	flex-direction: column;
@@ -36,7 +42,7 @@ section{
     top: 10%;
     left: 10%;
     margin: 5px;
-    width: 40vw;
+    width: 50vw;
     height: 10vh;
     padding: 10px;
     background-color: #F7Ce65;
@@ -54,8 +60,10 @@ section{
     background-color: #F7Ce65;
 }
 .container4{
-    flex-direction:column;
+    flex-direction:row;
     justify-content:space-evenly;
+    flex-wrap: wrap;
+    column-count:auto;
     border:5px solid #930C10;
     top: 45%;
     right: 5%;
