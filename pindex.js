@@ -17,6 +17,7 @@ const counter4 = document.getElementById("d4Display")
 const statsDis = document.getElementById("statDisplay1")
 const recentChar = document.getElementById("charbtn4")
 const saveBtn = document.getElementById("saveBtn")
+const charDisplay = document.getElementById("charGenDisplay")
 
 
 function createCharacter() {
