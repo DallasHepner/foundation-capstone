@@ -20,12 +20,12 @@ const saveBtn = document.getElementById("saveBtn")
 
 
 function createCharacter() {
-    axios.post("http://localhost:4044/create-characters/")
+    axios.post("https://dh-foundation-capstone.herokuapp.com/create-characters/")
     .then((res) => console.log(res.data))
     .catch(error => console.log(error))
 }
 function recentCharacters () {
-    axios.get("http://localhost:4044/characters/")
+    axios.get("https://dh-foundation-capstone.herokuapp.com/characters/")
     .then((res) => console.log(res.data))
     .catch(error => console.log(error))
 }
