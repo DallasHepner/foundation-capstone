@@ -19,6 +19,8 @@ var rollbar = new Rollbar({
 
 // record a generic message and send it to Rollbar
 rollbar.log('Hello world!')
+
+
 // DEV
 app.post('/seed', seed)
 // CHARACTERS
@@ -28,11 +30,11 @@ app.post('/characters', createCharacter)
 // GET EACH FILE
 app.get('/', (req, res) => {
     rollbar.log("Someone loaded up your html!")
-    res.sendFile(path.join(__dirname, '../public/index.html'))
+    res.sendFile(path.join(__dirname, '../index.html'))
 })
 app.get('/css', (req, res) => {
     rollbar.log("Someone loaded your css")
-    res.sendFile(path.join(__dirname, '../public/index.css'))
+    res.sendFile(path.join(__dirname, '../index.css'))
     try{
         pictureLink()
     }catch(warning){
@@ -40,7 +42,7 @@ app.get('/css', (req, res) => {
     }
 })
 app.get('/js', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/pindex.js'))
+    res.sendFile(path.join(__dirname, '../pindex.js'))
     try{ 
         nonExistentFunction();
     }catch(error){
