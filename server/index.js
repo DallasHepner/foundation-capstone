@@ -3,7 +3,7 @@ const express = require('express')
 const path = require('path')
 const cors = require('cors')
 const app = express()
-const {SERVER_PORT} = process.env
+const port = process.env.PORT || 4044
 const {seed, getCharacters, createCharacter} = require('./seed.js')
 
 app.use(express.json())
@@ -55,4 +55,4 @@ app.get('/public/js', (req, res) => {
     // }
 })
 
-app.listen(SERVER_PORT, () => console.log(`up on ${SERVER_PORT}`))
+app.listen(port, () => console.log(`up on ${port}`))
