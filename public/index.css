@@ -78,13 +78,13 @@ section{
 	align-content: flex-start;
 }
 .container5{
-    flex-direction:column;
+    flex-direction:row;
     justify-content:space-evenly;
     border: 5px solid #930C10;
     bottom: 5%;
     right: 5%;
     margin: 5px;
-    width: 10vw;
+    width: 25vw;
     height: 10vh;
     padding: 10px;
     background-color: #F7Ce65;

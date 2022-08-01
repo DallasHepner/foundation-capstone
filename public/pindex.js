@@ -17,10 +17,16 @@ const counter8 = document.getElementById("d8Display")
 const counter6 = document.getElementById("d6Display")
 const counter4 = document.getElementById("d4Display")
 const statsDis = document.getElementById("statDisplay1")
+const recentChar = document.getElementById("charbtn4")
 
 
 function createCharacter() {
     axios.get("http://localhost:4000/create-characters/")
+    .then(() => console.log(res.data))
+    .catch(error => console.log(error))
+}
+function recentCharacters () {
+    axios.post("http://localhost:4000/characters/")
     .then(() => console.log(res.data))
     .catch(error => console.log(error))
 }
