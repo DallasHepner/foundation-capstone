@@ -28,11 +28,11 @@ app.get('/characters', getCharacters)
 app.post('/characters', createCharacter)
 
 // GET EACH FILE
-app.get('/public', (req, res) => {
+app.get('/', (req, res) => {
     // rollbar.log("Someone loaded up your html!")
     res.sendFile(path.join(__dirname, '../index.html'))
 })
-app.get('/public/css', (req, res) => {
+app.get('/css', (req, res) => {
     // rollbar.log("Someone loaded your css")
     res.sendFile(path.join(__dirname, '../index.css'))
     // try{
@@ -41,7 +41,7 @@ app.get('/public/css', (req, res) => {
     //     rollbar.warning("Link unavailable")
     // }
 })
-app.get('/public/js', (req, res) => {
+app.get('/js', (req, res) => {
     res.sendFile(path.join(__dirname, '../pindex.js'))
     // try{ 
     //     nonExistentFunction();
