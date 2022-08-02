@@ -26,6 +26,8 @@ var rollbar = new Rollbar({
   captureUnhandledRejections: true,
 })
 
+rollbar.log('New Hello world!')
+
 
 function createCharacter() {
     rollbar.log("Someone created a new character")
