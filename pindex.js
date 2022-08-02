@@ -22,9 +22,12 @@ const charDisplay = document.getElementById("charGenDisplay")
 
 function createCharacter() {
     axios.post("https://dh-foundation-capstone.herokuapp.com/create-characters/")
-    .then((res) => console.log(res.data))
+    .then((res) => {
+        let {classes, races, name} = res.data
+        let newTxt = `Your class is ${classes}, your race is ${races}, and your name is ${name}`
+        charDisplay.textContent = newTxt
+    })
     .catch(error => console.log(error))
-    // charDisplay.textContent = res.data.charDisplay
 }
 function recentCharacters () {
     axios.get("https://dh-foundation-capstone.herokuapp.com/characters/")
