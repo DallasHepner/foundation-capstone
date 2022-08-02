@@ -20,7 +20,7 @@ const saveBtn = document.getElementById("saveBtn")
 const charDisplay = document.getElementById("charGenDisplay")
 
 function createCharacter() {
-    rollbar.log("Someone created a new character")
+    // rollbar.log("Someone created a new character")
     axios.post("/create-characters/")
     .then((res) => {
         console.log(res.data)
@@ -36,7 +36,7 @@ function recentCharacters () {
     .catch(error => console.log(error))
 }
 function saveMe () {
-    rollbar.log("SOMEONE SAVE YOUR PAGE!!!")
+    // rollbar.log("SOMEONE SAVE YOUR PAGE!!!")
     html2canvas(document.body).then((canvas) => {
         let a = document.createElement("a");
         a.download = "dnd-character.png";
@@ -46,7 +46,7 @@ function saveMe () {
 }
 
 function statGenerator() {
-    rollbar.log("Lets see them stats!")
+    // rollbar.log("Lets see them stats!")
     let diceSum = [];
 
     for(let i = 0; i < 6; i++) {
@@ -73,43 +73,43 @@ function statGenerator() {
 }
 
 function rollD20() {
-    rollbar.log("Someone rolled a d20")
+    // rollbar.log("Someone rolled a d20")
     let d1 = Math.floor(Math.random() * 20) + 1;
     console.log(d1)
     counter20.textContent = d1
 }
 function rollPercent() {
-    rollbar.log("Someone rolled a d20")
+    // rollbar.log("Someone rolled a d20")
     let d1 = Math.floor(Math.random() * 100) + 1;
     console.log(d1)
     counterPercent.textContent = d1
 }
 function rollD12() {
-    rollbar.log("Someone rolled a d20")
+    // rollbar.log("Someone rolled a d20")
     let d1 = Math.floor(Math.random() * 12) + 1;
     console.log(d1)
     counter12.textContent = d1
 }
 function rollD10() {
-    rollbar.log("Someone rolled a d20")
+    // rollbar.log("Someone rolled a d20")
     let d1 = Math.floor(Math.random() * 10) + 1;
     console.log(d1)
     counter10.textContent = d1
 }
 function rollD8() {
-    rollbar.log("Someone rolled a d20")
+    // rollbar.log("Someone rolled a d20")
     let d1 = Math.floor(Math.random() * 8) + 1;
     console.log(d1)
     counter8.textContent = d1
 }
 function rollD6() {
-    rollbar.log("Someone rolled a d20")
+    // rollbar.log("Someone rolled a d20")
     let d1 = Math.floor(Math.random() * 6) + 1;
     console.log(d1)
     counter6.textContent = d1
 }
 function rollD4() {
-    rollbar.log("Someone rolled a d20")
+    // rollbar.log("Someone rolled a d20")
     let d1 = Math.floor(Math.random() * 4) + 1;
     console.log(d1)
     counter4.textContent = d1
