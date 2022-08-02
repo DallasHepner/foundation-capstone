@@ -21,16 +21,17 @@ const charDisplay = document.getElementById("charGenDisplay")
 
 
 function createCharacter() {
-    axios.post("https://dh-foundation-capstone.herokuapp.com/create-characters/")
+    axios.post("/create-characters/")
     .then((res) => {
+        console.log(res.data)
         let {classes, races, name} = res.data
-        let newTxt = `Your class is ${classes}, your race is ${races}, and your name is ${name}`
+        let newTxt = `Class: ${classes} - Race: ${races} - Name: ${name}`
         charDisplay.textContent = newTxt
     })
     .catch(error => console.log(error))
 }
 function recentCharacters () {
-    axios.get("https://dh-foundation-capstone.herokuapp.com/characters/")
+    axios.get("/characters/")
     .then((res) => console.log(res.data))
     .catch(error => console.log(error))
 }
@@ -105,7 +106,7 @@ function rollD4() {
     counter4.textContent = d1
 }
 
-alertBtn.addEventListener('click', recentCharacters)
+alertBtn.addEventListener('click', createCharacter)
 statBtn.addEventListener('click', statGenerator)
 diceBtn.addEventListener('click', rollD20)
 diceBtn2.addEventListener('click', rollPercent)
@@ -114,5 +115,5 @@ diceBtn4.addEventListener('click', rollD10)
 diceBtn5.addEventListener('click', rollD8)
 diceBtn6.addEventListener('click', rollD6)
 diceBtn7.addEventListener('click', rollD4)
-recentChar.addEventListener('click', createCharacter)
+recentChar.addEventListener('click', recentCharacters)
 saveBtn.addEventListener('click', saveMe)

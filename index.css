@@ -77,13 +77,17 @@ section{
     top: 45%;
     right: 5%;
     width: 90vw;
-    height: 10vh;
+    height: 15vh;
     display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: flex-start;
-	align-content: flex-start;
+	align-content: space-between;
+}
+.box{
+    height: fit-content;
+    min-width: 5%;
 }
 .container5{
     flex-direction:row;

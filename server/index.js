@@ -8,23 +8,23 @@ const {seed, getCharacters, createCharacter} = require('./seed.js')
 app.use(express.json())
 app.use(cors())
 
-// include and initialize the rollbar library with your access token
-var Rollbar = require('rollbar')
-var rollbar = new Rollbar({
-  accessToken: 'ae8dee4a889e415d91f1149d79d8ce98',
-  captureUncaught: true,
-  captureUnhandledRejections: true,
-})
+// // include and initialize the rollbar library with your access token
+// var Rollbar = require('rollbar')
+// var rollbar = new Rollbar({
+//   accessToken: 'ae8dee4a889e415d91f1149d79d8ce98',
+//   captureUncaught: true,
+//   captureUnhandledRejections: true,
+// })
 
-// record a generic message and send it to Rollbar
-rollbar.log('Hello world!')
+// // record a generic message and send it to Rollbar
+// rollbar.log('Hello world!')
 
 
 // DEV
 app.post('/seed', seed)
 // CHARACTERS
-app.post('/create-characters', getCharacters)
-app.get('/characters', createCharacter)
+app.post('/create-characters', createCharacter)
+app.get('/characters', getCharacters)
 
 // GET EACH FILE
 app.get('/', (req, res) => {
