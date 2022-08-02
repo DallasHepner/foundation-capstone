@@ -24,7 +24,7 @@ function createCharacter() {
     axios.post("https://dh-foundation-capstone.herokuapp.com/create-characters/")
     .then((res) => console.log(res.data))
     .catch(error => console.log(error))
-    charDisplay.textContent = res.data.charDisplay
+    // charDisplay.textContent = res.data.charDisplay
 }
 function recentCharacters () {
     axios.get("https://dh-foundation-capstone.herokuapp.com/characters/")
