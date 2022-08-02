@@ -9,6 +9,7 @@ h1{
     position: absolute;
     text-align: center;
     color: #930C10;
+    font-size: 2vw;
 }
 h2{
     position: absolute;
@@ -42,10 +43,22 @@ section{
     top: 10%;
     left: 10%;
     margin: 5px;
-    width: 50vw;
+    width: 90vw;
     height: 10vh;
     padding: 10px;
     background-color: #F7Ce65;
+}
+.container2-1{
+    top: 45%;
+    right: 5%;
+    width: 80vw;
+    height: 15vh;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	/* align-content: space-between; */
 }
 .container3{
     flex-direction:column;
@@ -54,10 +67,22 @@ section{
     top: 10%;
     right: 10%;
     margin: 5px;
-    width: 50vw;
-    height: 10vh;
+    width: 30vw;
+    height: 15vh;
     padding: 10px;
     background-color: #F7Ce65;
+}
+.container3-1{
+    top: 45%;
+    right: 5%;
+    width: 30vw;
+    height: 10vh;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: space-between;
 }
 .container4{
     flex-direction:row;
