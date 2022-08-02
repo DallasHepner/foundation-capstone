@@ -19,16 +19,6 @@ const recentChar = document.getElementById("charbtn4")
 const saveBtn = document.getElementById("saveBtn")
 const charDisplay = document.getElementById("charGenDisplay")
 
-var Rollbar = require('rollbar')
-var rollbar = new Rollbar({
-  accessToken: 'ae8dee4a889e415d91f1149d79d8ce98',
-  captureUncaught: true,
-  captureUnhandledRejections: true,
-})
-
-rollbar.log('New Hello world!')
-
-
 function createCharacter() {
     rollbar.log("Someone created a new character")
     axios.post("/create-characters/")
