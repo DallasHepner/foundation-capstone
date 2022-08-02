@@ -9,13 +9,13 @@ h1{
     position: absolute;
     text-align: center;
     color: #930C10;
-    font-size: 2vw;
+    font-size: 3vw;
 }
 h2{
     position: absolute;
     text-align: center;
     color: #930C10;
-    font-size: 2vw;
+    font-size: 3vw;
 }
 section{
     display: flex;
